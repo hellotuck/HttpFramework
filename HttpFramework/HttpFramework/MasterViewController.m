@@ -23,23 +23,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     GetUserlistMessage *msgObj = [[GetUserlistMessage alloc] init];
     msgObj.account = @"13638648520";
     GetUserlist *getUserList = [[GetUserlist alloc] initWithMessageObject:msgObj];
     [getUserList httpPostMethodStart:^(GetUserlistReceived *obj, id err) {
         NSArray *userinfoArray = obj.message.userinfos.userinfo;
-        
         for (UserListInfo *info in userinfoArray) {
             NSLog(@"解析结果:%@,%@,%@,%@",info.ispid,info.contactphone,info.username,info.loginname);
         }
-
-//        for (int i=0;i<userinfoArray.count;i++) {
-//            UserListInfo *info = userinfoArray[i];
-//            NSLog(@"解析结果:%@,%@,%@,%@",info.ispid,info.contactphone,info.username,info.loginname);
-//        }
     }];
-
     
     // Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;

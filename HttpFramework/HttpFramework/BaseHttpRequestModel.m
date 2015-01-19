@@ -37,11 +37,16 @@
     m_RequestXml = [NSString stringWithFormat:@"<?xml version=\"1.0\" encoding=\"utf-8\" ?>%@",xmlStr];
 }
 
-
-
-
 - (void)httpGetMethodStart:(JSONObjectBlock)completeBlock{
     
+}
+
+- (id)checkModelDictionary:(NSDictionary *)dictionary modelClass:(Class)class{
+    NSArray *keysArray = [self getClassArrayTypePropertyNames:class keysArray:nil propertyName:nil];
+    if(keysArray.count>0){
+        [self transformDictionary:dictionary superKey:NSStringFromClass(class) keysArray:keysArray];
+    }
+    return [[class alloc] initWithDictionary:dictionary error:NULL];
 }
 
 
@@ -70,10 +75,10 @@
                 if(rang.location!=NSNotFound){
                     NSString *protocolStr = [pType substringFromIndex:rang.location];
                     protocolStr = [protocolStr stringByReplacingOccurrencesOfString:@">" withString:@""];
-                    NSArray* protocolArray = [protocolStr componentsSeparatedByString:@"<"];
+                    NSArray *protocolArray = [protocolStr componentsSeparatedByString:@"<"];
+                    NSArray *excludeProtocolArray = @[@"Optional",@"Index",@"ConvertOnDemand",@"Ignore"];
                     for (NSString *prName in protocolArray) {
-                        if(![prName isEqualToString:@"Optional"]&&![prName isEqualToString:@"Index"]
-                           &&![prName isEqualToString:@"ConvertOnDemand"]&&![prName isEqualToString:@"Ignore"]){
+                        if(![excludeProtocolArray containsObject:prName]){
                             protocolName = prName;
                         }
                     }
@@ -126,14 +131,6 @@
             }
         }
     }
-}
-
-- (id)checkModelDictionary:(NSDictionary *)dictionary modelClass:(Class)class{
-    NSArray *keysArray = [self getClassArrayTypePropertyNames:class keysArray:nil propertyName:nil];
-    if(keysArray.count>0){
-        [self transformDictionary:dictionary superKey:NSStringFromClass(class) keysArray:keysArray];
-    }
-    return [[class alloc] initWithDictionary:dictionary error:NULL];
 }
 
 @end

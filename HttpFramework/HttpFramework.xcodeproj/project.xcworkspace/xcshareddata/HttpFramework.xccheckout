@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>DDED9A52-49C0-489B-98D1-B6CE133FC2F4</string>
+	<key>IDESourceControlProjectName</key>
+	<string>HttpFramework</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>10812D39FD6572997AA609AC3A01BE7E210B7C79</key>
+		<string>https://github.com/hellotuck/HttpFramework.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>HttpFramework/HttpFramework.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>10812D39FD6572997AA609AC3A01BE7E210B7C79</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/hellotuck/HttpFramework.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>10812D39FD6572997AA609AC3A01BE7E210B7C79</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>10812D39FD6572997AA609AC3A01BE7E210B7C79</string>
+			<key>IDESourceControlWCCName</key>
+			<string>HttpFramework</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 
 
-#define GET_REGISTADD_URL  @"113.57.196.18:19193"
-#define GET_USERLIST_URL [NSString stringWithFormat:@"http:/%@/plugins/datacollection/getUserListWithAccout",GET_REGISTADD_URL]
+#define GET_REGISTADD_URL  @"http://113.57.196.18:19193"
+#define GET_USERLIST_URL [NSString stringWithFormat:@"%@/plugins/datacollection/getUserListWithAccout",GET_REGISTADD_URL]
 
 
 
