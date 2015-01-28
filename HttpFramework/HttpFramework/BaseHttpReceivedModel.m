@@ -10,19 +10,11 @@
 
 @implementation BaseHttpReceivedModel
 
-
 @end
 
 
 //result
 
 @implementation ReceivedResult
-
-@end
-
-
-//Message
-
-@implementation ReceivedMessage
 
 @end

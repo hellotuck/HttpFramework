@@ -9,7 +9,7 @@
 #import "BaseHttpReceivedModel.h"
 
 @class GetUserlistReceivedMessage;
-@interface GetUserlistReceived : BaseHttpReceivedModel
+@interface GetUserlistReceived : BaseHttpReceivedModel<NSCoding>
 
 @property (nonatomic,strong) GetUserlistReceivedMessage<Optional> *message;
 
@@ -18,12 +18,11 @@
 
 /**************************** message ****************************/
 @class UserListInfos;
-@interface GetUserlistReceivedMessage : ReceivedMessage
+@interface GetUserlistReceivedMessage : JSONModel
 
 @property (nonatomic,strong) UserListInfos *userinfos;
 
 @end
-
 
 
 /**************************** userinfos ****************************/

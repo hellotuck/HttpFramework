@@ -10,11 +10,9 @@
 #import "Conf.h"
 #import "XMLDictionary.h"
 #import "JSONHTTPClient.h"
+#import "ModelUtil.h"
 
-
-
-
-@class Authorize,SendMessage;
+@class Authorize;
 @interface BaseHttpRequestModel : JSONModel{
     NSString *m_RequestXml;
 }
@@ -24,16 +22,15 @@
 @property (nonatomic,strong) NSString *_type;
 @property (nonatomic,strong) NSString *_version;
 @property (nonatomic,strong) Authorize *authorize;
-@property (nonatomic,strong) SendMessage *message;
 
 
-- (id)initWithMessageObject:(SendMessage *)msgObject;
+
 
 - (void)httpPostMethodStart:(JSONObjectBlock)completeBlock;
 
 - (void)httpGetMethodStart:(JSONObjectBlock)completeBlock;
 
-- (id)checkModelDictionary:(NSDictionary *)dictionary modelClass:(Class)aClass;
+- (id)creatWithModelDictionary:(NSDictionary *)dictionary modelClass:(Class)aClass;
 
 @end
 
@@ -46,9 +43,3 @@
 @property (nonatomic,strong) NSString *time;
 
 @end
-
-
-@interface SendMessage : JSONModel
-
-@end
-

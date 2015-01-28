@@ -8,14 +8,14 @@
 
 #import "BaseHttpRequestModel.h"
 
-@class SendOtherObject;
+@class GetUserlistMessage;
 @interface GetUserlist : BaseHttpRequestModel
+
+@property (nonatomic,strong) GetUserlistMessage *message;
 
 @end
 
-
-
-@interface GetUserlistMessage : SendMessage
+@interface GetUserlistMessage : JSONModel
 
 @property (nonatomic,strong) NSString<Optional> *account;
 

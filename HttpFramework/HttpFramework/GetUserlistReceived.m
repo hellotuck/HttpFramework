@@ -25,4 +25,15 @@
 
 @implementation UserListInfo
 
+- (id)init{
+    self = [super init];
+    if(self){
+        _contactphone = @"";
+        _loginname = @"";
+        _ispid = @"";
+        _username = @"";
+    }
+    return self;
+}
+
 @end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7953C06B1A78DE0200D9B10F /* ModelUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 7953C06A1A78DE0200D9B10F /* ModelUtil.m */; };
 		79E6ED911A679CD5008A8D2F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 79E6ED901A679CD5008A8D2F /* main.m */; };
 		79E6ED941A679CD5008A8D2F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 79E6ED931A679CD5008A8D2F /* AppDelegate.m */; };
 		79E6ED971A679CD5008A8D2F /* HttpFramework.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 79E6ED951A679CD5008A8D2F /* HttpFramework.xcdatamodeld */; };
@@ -45,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7953C0691A78DE0200D9B10F /* ModelUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelUtil.h; sourceTree = "<group>"; };
+		7953C06A1A78DE0200D9B10F /* ModelUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelUtil.m; sourceTree = "<group>"; };
 		79E6ED8B1A679CD5008A8D2F /* HttpFramework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HttpFramework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79E6ED8F1A679CD5008A8D2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79E6ED901A679CD5008A8D2F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -244,13 +247,15 @@
 		79E6EDE21A67ACE2008A8D2F /* HttpDataModel */ = {
 			isa = PBXGroup;
 			children = (
-				79E6EDE61A67AD8E008A8D2F /* SendModel */,
-				79E6EDEA1A67AE18008A8D2F /* ReceivedModel */,
+				7953C0691A78DE0200D9B10F /* ModelUtil.h */,
+				7953C06A1A78DE0200D9B10F /* ModelUtil.m */,
+				79E6EDE61A67AD8E008A8D2F /* RequestModel */,
+				79E6EDEA1A67AE18008A8D2F /* ResponseModel */,
 			);
 			name = HttpDataModel;
 			sourceTree = "<group>";
 		};
-		79E6EDE61A67AD8E008A8D2F /* SendModel */ = {
+		79E6EDE61A67AD8E008A8D2F /* RequestModel */ = {
 			isa = PBXGroup;
 			children = (
 				79E6EDE31A67AD7D008A8D2F /* BaseHttpRequestModel.h */,
@@ -258,10 +263,10 @@
 				79E6EDEF1A67BACA008A8D2F /* GetUserlist.h */,
 				79E6EDF01A67BACA008A8D2F /* GetUserlist.m */,
 			);
-			name = SendModel;
+			name = RequestModel;
 			sourceTree = "<group>";
 		};
-		79E6EDEA1A67AE18008A8D2F /* ReceivedModel */ = {
+		79E6EDEA1A67AE18008A8D2F /* ResponseModel */ = {
 			isa = PBXGroup;
 			children = (
 				79E6EDE71A67AE13008A8D2F /* BaseHttpReceivedModel.h */,
@@ -269,7 +274,7 @@
 				79E6EDF81A68C8C7008A8D2F /* GetUserlistReceived.h */,
 				79E6EDF91A68C8C7008A8D2F /* GetUserlistReceived.m */,
 			);
-			name = ReceivedModel;
+			name = ResponseModel;
 			sourceTree = "<group>";
 		};
 		79E6EDEB1A67B640008A8D2F /* XMLDictionary */ = {
@@ -402,6 +407,7 @@
 				79E6ED971A679CD5008A8D2F /* HttpFramework.xcdatamodeld in Sources */,
 				79E6EDD91A67A21E008A8D2F /* JSONAPI.m in Sources */,
 				79E6EDD51A67A21E008A8D2F /* JSONModelArray.m in Sources */,
+				7953C06B1A78DE0200D9B10F /* ModelUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,6 +598,7 @@
 				79E6EDB61A679CD5008A8D2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		79E6EDB71A679CD5008A8D2F /* Build configuration list for PBXNativeTarget "HttpFrameworkTests" */ = {
 			isa = XCConfigurationList;
@@ -600,6 +607,7 @@
 				79E6EDB91A679CD5008A8D2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

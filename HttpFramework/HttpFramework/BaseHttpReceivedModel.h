@@ -7,8 +7,9 @@
 //
 
 #import "JSONModel.h"
+#import "ModelUtil.h"
 
-@class ReceivedResult,ReceivedMessage;
+@class ReceivedResult;
 @interface BaseHttpReceivedModel : JSONModel
 
 @property (nonatomic,strong) NSString *__name;
@@ -20,17 +21,9 @@
 @end
 
 
-
 @interface ReceivedResult : JSONModel
 
 @property (nonatomic,strong) NSString *code;
 @property (nonatomic,strong) NSString *desc;
-
-@end
-
-
-
-
-@interface ReceivedMessage : JSONModel
 
 @end
