@@ -14,6 +14,12 @@
 
 + (id)loadModelFromFile:(Class)modelObjClass filename:(NSString *)filename;
 
++ (BOOL)removeModelFile:(Class)modelObjClass filename:(NSString *)filename;
+
++ (BOOL)saveToFileArchive:(id)modelObj filename:(NSString *)filename;
+
++ (id)loadFromFileArchive:(Class)modelObjClass filename:(NSString *)filename;
+
 + (NSArray *)getClassArrayTypePropertyNames:(Class)clazz keysArray:(NSMutableArray *)keysArray propertyName:(NSString *)superPropertyName;
 
 + (void)transformDictionary:(NSDictionary *)tempDic superKey:(NSString *)superKey keysArray:(NSArray *)keysArray;

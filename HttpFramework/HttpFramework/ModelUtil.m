@@ -12,9 +12,9 @@
 @implementation ModelUtil
 
 
-+ (NSString *)filePath:(NSString *)filename {
++ (NSString *)filePath:(Class)class filename:(NSString *)filename{
     if (!filename) {
-        return nil;
+        filename = NSStringFromClass(class);
     }
     if(![filename hasSuffix:@".plist"]) {
         filename = [filename stringByAppendingString:@".plist"];
@@ -25,17 +25,11 @@
 }
 
 + (void)saveModelToFile:(id)modelObj filename:(NSString *)filename {
-    if (!filename) {
-        filename = NSStringFromClass([modelObj class]);
-    }
-    [[modelObj toDictionary] writeToFile:[self filePath:filename] atomically:YES];
+    [[modelObj toDictionary] writeToFile:[self filePath:[modelObj class] filename:filename] atomically:YES];
 }
 
 + (id)loadModelFromFile:(Class)modelObjClass filename:(NSString *)filename {
-    if (!filename) {
-        filename = NSStringFromClass(modelObjClass);
-    }
-    NSDictionary* object = [NSDictionary dictionaryWithContentsOfFile:[self filePath:filename]];
+    NSDictionary* object = [NSDictionary dictionaryWithContentsOfFile:[self filePath:modelObjClass filename:filename]];
     JSONModelError* initError;
     id modelObj = [[modelObjClass alloc] initWithDictionary: object error:&initError];
     if (!modelObj) {
@@ -44,6 +38,27 @@
     return modelObj;
 }
 
++ (BOOL)removeModelFile:(Class)modelObjClass filename:(NSString *)filename{
+    return [[NSFileManager defaultManager] removeItemAtPath:[self filePath:modelObjClass filename:filename] error:NULL];
+}
+
++ (BOOL)saveToFileArchive:(id)modelObj filename:(NSString *)filename{
+    return [NSKeyedArchiver archiveRootObject:modelObj toFile:[self filePath:[modelObj class] filename:filename]];
+}
+
++ (id)loadFromFileArchive:(Class)modelObjClass filename:(NSString *)filename {
+    id obj = nil;
+    @try {
+        obj = [NSKeyedUnarchiver unarchiveObjectWithFile:[self filePath:modelObjClass filename:filename]];
+    }
+    @catch (NSException *exception) {
+        NSLog(@"Exception : %@", exception);
+    }
+    @finally {
+        
+    }
+    return obj;
+}
 
 //查找类中的NSArray数组的属性名称
 + (NSArray *)getClassArrayTypePropertyNames:(Class)class keysArray:(NSMutableArray *)keysArray propertyName:(NSString *)superPropertyName{
